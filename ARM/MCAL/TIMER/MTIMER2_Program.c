@@ -987,7 +987,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM2_CCMR1,MTIM_OC1M2);
 		#endif
 			/* Enable Capture/Compare 1 output */
-			CLR_BIT(MTIM2_CCER,MTIM_CC1E);
+			SET_BIT(MTIM2_CCER,MTIM_CC1E);
 			MTIM2_CCR1 = ((Copy_u8DutyCycle*MTIM2_ARR)/100);
 		#elif TIM_CH2_EN == 1U
 			/* Set Capture/Compare 2 as output */
@@ -1016,7 +1016,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM2_CCMR1,MTIM_OC2M2);
 		#endif
 			/* Enable Capture/Compare 2 output */
-			CLR_BIT(MTIM2_CCER,MTIM_CC2E);
+			SET_BIT(MTIM2_CCER,MTIM_CC2E);
 			MTIM2_CCR2 = ((Copy_u8DutyCycle*MTIM2_ARR)/100);
 		#elif TIM_CH3_EN == 1U
 			/* Set Capture/Compare 3 as output */
@@ -1045,7 +1045,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM2_CCMR1,MTIM_OC3M2);
 		#endif
 			/* Enable Capture/Compare 3 output */
-			CLR_BIT(MTIM2_CCER,MTIM_CC3E);
+			SET_BIT(MTIM2_CCER,MTIM_CC3E);
 			MTIM2_CCR3 = ((Copy_u8DutyCycle*MTIM2_ARR)/100);
 		#elif TIM_CH4_EN == 1U
 			/* Set Capture/Compare 4 as output */
@@ -1074,7 +1074,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM2_CCMR1,MTIM_OC4M2);
 		#endif
 			/* Enable Capture/Compare 4 output */
-			CLR_BIT(MTIM2_CCER,MTIM_CC4E);
+			SET_BIT(MTIM2_CCER,MTIM_CC4E);
 			MTIM2_CCR4 = ((Copy_u8DutyCycle*MTIM2_ARR)/100);
 		#endif
 			/* Initialize all the registers */
@@ -1131,7 +1131,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM3_CCMR1,MTIM_OC1M2);
 		#endif
 			/* Enable Capture/Compare 1 output */
-			CLR_BIT(MTIM3_CCER,MTIM_CC1E);
+			SET_BIT(MTIM3_CCER,MTIM_CC1E);
 			MTIM3_CCR1 = ((Copy_u8DutyCycle*MTIM3_ARR)/100);
 		#elif TIM_CH2_EN == 1U
 			/* Set Capture/Compare 2 as output */
@@ -1160,7 +1160,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM3_CCMR1,MTIM_OC2M2);
 		#endif
 			/* Enable Capture/Compare 2 output */
-			CLR_BIT(MTIM3_CCER,MTIM_CC2E);
+			SET_BIT(MTIM3_CCER,MTIM_CC2E);
 			MTIM3_CCR2 = ((Copy_u8DutyCycle*MTIM3_ARR)/100);
 		#elif TIM_CH3_EN == 1U
 			/* Set Capture/Compare 3 as output */
@@ -1189,7 +1189,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM3_CCMR1,MTIM_OC3M2);
 		#endif
 			/* Enable Capture/Compare 3 output */
-			CLR_BIT(MTIM3_CCER,MTIM_CC3E);
+			SET_BIT(MTIM3_CCER,MTIM_CC3E);
 			MTIM3_CCR3 = ((Copy_u8DutyCycle*MTIM3_ARR)/100);
 		#elif TIM_CH4_EN == 1U
 			/* Set Capture/Compare 4 as output */
@@ -1218,7 +1218,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM3_CCMR1,MTIM_OC4M2);
 		#endif
 			/* Enable Capture/Compare 4 output */
-			CLR_BIT(MTIM3_CCER,MTIM_CC4E);
+			SET_BIT(MTIM3_CCER,MTIM_CC4E);
 			MTIM3_CCR4 = ((Copy_u8DutyCycle*MTIM3_ARR)/100);
 		#endif
 			/* Initialize all the registers */
@@ -1275,7 +1275,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM4_CCMR1,MTIM_OC1M2);
 		#endif
 			/* Enable Capture/Compare 1 output */
-			CLR_BIT(MTIM4_CCER,MTIM_CC1E);
+			SET_BIT(MTIM4_CCER,MTIM_CC1E);
 			MTIM4_CCR1 = ((Copy_u8DutyCycle*MTIM4_ARR)/100);
 		#elif TIM_CH2_EN == 1U
 			/* Set Capture/Compare 2 as output */
@@ -1304,7 +1304,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM4_CCMR1,MTIM_OC2M2);
 		#endif
 			/* Enable Capture/Compare 2 output */
-			CLR_BIT(MTIM4_CCER,MTIM_CC2E);
+			SET_BIT(MTIM4_CCER,MTIM_CC2E);
 			MTIM4_CCR2 = ((Copy_u8DutyCycle*MTIM4_ARR)/100);
 		#elif TIM_CH3_EN == 1U
 			/* Set Capture/Compare 3 as output */
@@ -1333,7 +1333,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM4_CCMR1,MTIM_OC3M2);
 		#endif
 			/* Enable Capture/Compare 3 output */
-			CLR_BIT(MTIM4_CCER,MTIM_CC3E);
+			SET_BIT(MTIM4_CCER,MTIM_CC3E);
 			MTIM4_CCR3 = ((Copy_u8DutyCycle*MTIM4_ARR)/100);
 		#elif TIM_CH4_EN == 1U
 			/* Set Capture/Compare 4 as output */
@@ -1362,7 +1362,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM4_CCMR1,MTIM_OC4M2);
 		#endif
 			/* Enable Capture/Compare 4 output */
-			CLR_BIT(MTIM4_CCER,MTIM_CC4E);
+			SET_BIT(MTIM4_CCER,MTIM_CC4E);
 			MTIM4_CCR4 = ((Copy_u8DutyCycle*MTIM4_ARR)/100);
 		#endif
 			/* Initialize all the registers */
@@ -1419,7 +1419,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM5_CCMR1,MTIM_OC1M2);
 		#endif
 			/* Enable Capture/Compare 1 output */
-			CLR_BIT(MTIM5_CCER,MTIM_CC1E);
+			SET_BIT(MTIM5_CCER,MTIM_CC1E);
 			MTIM5_CCR1 = ((Copy_u8DutyCycle*MTIM5_ARR)/100);
 		#elif TIM_CH2_EN == 1U
 			/* Set Capture/Compare 2 as output */
@@ -1448,7 +1448,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM5_CCMR1,MTIM_OC2M2);
 		#endif
 			/* Enable Capture/Compare 2 output */
-			CLR_BIT(MTIM5_CCER,MTIM_CC2E);
+			SET_BIT(MTIM5_CCER,MTIM_CC2E);
 			MTIM5_CCR2 = ((Copy_u8DutyCycle*MTIM5_ARR)/100);
 		#elif TIM_CH3_EN == 1U
 			/* Set Capture/Compare 3 as output */
@@ -1477,7 +1477,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM5_CCMR1,MTIM_OC3M2);
 		#endif
 			/* Enable Capture/Compare 3 output */
-			CLR_BIT(MTIM5_CCER,MTIM_CC3E);
+			SET_BIT(MTIM5_CCER,MTIM_CC3E);
 			MTIM5_CCR3 = ((Copy_u8DutyCycle*MTIM5_ARR)/100);
 		#elif TIM_CH4_EN == 1U
 			/* Set Capture/Compare 4 as output */
@@ -1506,7 +1506,7 @@ u8 MTIM_u8GeneratePWM(TimId_t Copy_uddtTimerId, OutComparePolarity_t Copy_uddtOC
 			SET_BIT(MTIM5_CCMR1,MTIM_OC4M2);
 		#endif
 			/* Enable Capture/Compare 4 output */
-			CLR_BIT(MTIM5_CCER,MTIM_CC4E);
+			SET_BIT(MTIM5_CCER,MTIM_CC4E);
 			MTIM4_CCR5 = ((Copy_u8DutyCycle*MTIM5_ARR)/100);
 		#endif
 			/* Initialize all the registers */

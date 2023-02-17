@@ -1,56 +1,26 @@
-/*******************************************************************************************************/
-/* Author            : kholoud khaled                                                                  */
-/* Version           : V0.0.0                                                                          */
-/* Data              : 9 Feb 2023                                                                      */
-/* Description       : MSTK_Privite.h --> implementations                                              */
-/* Features          : Register Definitions                                                            */
-/*******************************************************************************************************/
+/*
+ * MSTK_Private.h
+ *
+ *  Created on: Feb 7, 2023
+ *      Author: Ahmed Khaled Hammad
+ */
+
+#ifndef MSTK_PRIVATE_H_
+#define MSTK_PRIVATE_H_
+
+#define STK_BASE_ADDRESS 0xE000E010
+
+typedef struct
+{
+	volatile u32 CTRL   ;
+	volatile u32 LOAD   ;
+	volatile u32 VAL    ;
+	volatile u32 CALIB  ;
+
+}STK_t;
+
+#define MSTK             (( STK_t *)(STK_BASE_ADDRESS))
 
 
 
-/*******************************************************************************************************/
-/*                                   guard of file will call on time in .c                             */
-/*******************************************************************************************************/
-
-
-
-#ifndef SYSTICK_REG_H_
-#define SYSTICK_REG_H_
-
-
-/*******************************************************************************************************/
-/*                                    Macros Base Address Of SYSTICK Registers                         */
-/*******************************************************************************************************/
-
- #define    STK_BASE_ADRESS        0xE000E010
-
-/*******************************************************************************************************/
-/*                                       Register Definitions                                          */
-/*-----------------------------------------------------------------------------------------------------*/
-/*     - Developer can't Edit in it                                                                    */
-/*     - Register _ Defination		                                                                   */
-/*     - Design :                                                                                      */
-/*    				- #define	:	NO                                                                 */
-/*    				- Union		:	NO                                                                 */
-/*    				- Struct	:	YES                                                                */
-/*                                                                                                     */
-/*******************************************************************************************************/
-
-
-typedef struct{
-
-	volatile u32 CTRL ;
-	volatile u32 LOAD ;
-	volatile u32 VAL  ;
-	volatile u32 CALIB;
-
-}SYSTICK;
-
-/*******************************************************************************************************/
-/*                                   Struct Macros Base Address Of SYSTICK                             */
-/*******************************************************************************************************/
-
-
-#define MSTK ((volatile SYSTICK*)STK_BASE_ADRESS)
-
-#endif /* SYSTICK_REG_H_ */
+#endif /* MSTK_PRIVATE_H_ */
