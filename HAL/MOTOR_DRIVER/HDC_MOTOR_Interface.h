@@ -7,6 +7,7 @@
 
 #ifndef HDC_MOTOR_INTERFACE_H_
 #define HDC_MOTOR_INTERFACE_H_
+/* The DC Motor will work at range from 20KHZ to 100KHZ which means that the ARR will be at range 400 -> 81 and PSC = 1 */
 /*---------- Motor Id ----------*/
 typedef enum{
 	HMOTOR1,
@@ -20,7 +21,7 @@ typedef enum{
  * Parameter: Motor Id(HMOTOR1 - HMOTOR2 - HMOTOR3), duty cycle, Timer number
  * Return: Error State
  */
-u8 HDC_MOTOR_u8MotorInit(MotorId_t Copy_uddtMotorId, u8 Copy_u8TimerNumber);
+u8 HDC_MOTOR_u8MotorInit(MotorId_t Copy_uddtMotorId);
 
 /*
  * Description: Motor move clock wise

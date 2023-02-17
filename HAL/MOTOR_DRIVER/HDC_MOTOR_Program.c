@@ -17,7 +17,7 @@
 
 /*---------- Functions Implementation ----------*/
 /*---------- HDC_MOTOR_u8MotorInit Implementation ----------*/
-u8 HDC_MOTOR_u8MotorInit(MotorId_t Copy_uddtMotorId, u8 Copy_u8TimerNumber)
+u8 HDC_MOTOR_u8MotorInit(MotorId_t Copy_uddtMotorId)
 {
 	u8 Local_u8ErrorState = 0;
 	if(Copy_uddtMotorId<=HMOTOR3)
@@ -25,113 +25,50 @@ u8 HDC_MOTOR_u8MotorInit(MotorId_t Copy_uddtMotorId, u8 Copy_u8TimerNumber)
 		switch(Copy_uddtMotorId)
 		{
 		case HMOTOR1:
-			/* Enable Timer port */
-			MRCC_voidEnablePeripheralClock(MRCC_AHB1,HMOTOR1_EN_PORT);
+			/* Initialize timer */
+			MTIM_u8TimInit(HMOTOR1_TIMER_Number);
 			/* Set Timer Pin ALTF */
 			MGPIO_vSetPinMode(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,MODE_ALTF);
-			switch(Copy_u8TimerNumber)
-			{
-			case TIM2:
-				/* Enable Timer */
-				MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM2_EN);
-				/* Set ALTF Type */
-				MGPIO_vSetPinAltFn(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,ALTF_1);
-				break;
-			case TIM3:
-				/* Enable Timer */
-				MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
-				/* Set ALTF Type */
-				MGPIO_vSetPinAltFn(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,ALTF_2);
-				break;
-			case TIM4:
-				/* Enable Timer */
-				MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
-				/* Set ALTF Type */
-				MGPIO_vSetPinAltFn(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,ALTF_2);
-				break;
-			case TIM5:
-				/* Enable Timer */
-				MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
-				/* Set ALTF Type */
-				MGPIO_vSetPinAltFn(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,ALTF_2);
-				break;
-			}
+			/* Set ALTF Type */
+			MGPIO_vSetPinAltFn(HMOTOR1_EN_PORT,HMOTOR1_EN_PIN,HMOTOR1_TIMER_ALTF);
 			/* Set Motor Pins as Output */
 			MGPIO_vSetPinMode(HMOTOR1_A_PORT,HMOTOR1_A_PIN,MODE_OUTPUT);
 			MGPIO_vSetPinMode(HMOTOR1_B_PORT,HMOTOR1_B_PIN,MODE_OUTPUT);
+			MGPIO_vSetPinOutPutType(HMOTOR1_A_PORT,HMOTOR1_A_PIN,PUSH_PULL);
+			MGPIO_vSetPinOutPutType(HMOTOR1_B_PORT,HMOTOR1_B_PIN,PUSH_PULL);
+			MGPIO_vSetPullType(HMOTOR1_A_PORT,HMOTOR1_A_PIN,PULL_OFF);
+			MGPIO_vSetPullType(HMOTOR1_B_PORT,HMOTOR1_B_PIN,PULL_OFF);
 			break;
-			case HMOTOR2:
-				/* Enable Timer port */
-				MRCC_voidEnablePeripheralClock(MRCC_AHB1,HMOTOR2_EN_PORT);
-				/* Set Timer Pin ALTF */
-				MGPIO_vSetPinMode(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,MODE_ALTF);
-				switch(Copy_u8TimerNumber)
-				{
-				case TIM2:
-					/* Enable Timer */
-					MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM2_EN);
-					/* Set ALTF Type */
-					MGPIO_vSetPinAltFn(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,ALTF_1);
-					break;
-				case TIM3:
-					/* Enable Timer */
-					MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
-					/* Set ALTF Type */
-					MGPIO_vSetPinAltFn(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,ALTF_2);
-					break;
-				case TIM4:
-					/* Enable Timer */
-					MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
-					/* Set ALTF Type */
-					MGPIO_vSetPinAltFn(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,ALTF_2);
-					break;
-				case TIM5:
-					/* Enable Timer */
-					MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
-					/* Set ALTF Type */
-					MGPIO_vSetPinAltFn(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,ALTF_2);
-					break;
-				}
-				/* Set Motor Pins as Output */
-				MGPIO_vSetPinMode(HMOTOR2_A_PORT,HMOTOR2_A_PIN,MODE_OUTPUT);
-				MGPIO_vSetPinMode(HMOTOR2_B_PORT,HMOTOR2_B_PIN,MODE_OUTPUT);
-				break;
-				case HMOTOR3:
-					/* Enable Timer port */
-					MRCC_voidEnablePeripheralClock(MRCC_AHB1,HMOTOR3_EN_PORT);
-					/* Set Timer Pin ALTF */
-					MGPIO_vSetPinMode(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,MODE_ALTF);
-					switch(Copy_u8TimerNumber)
-					{
-					case TIM2:
-						/* Enable Timer */
-						MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM2_EN);
-						/* Set ALTF Type */
-						MGPIO_vSetPinAltFn(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,ALTF_1);
-						break;
-					case TIM3:
-						/* Enable Timer */
-						MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
-						/* Set ALTF Type */
-						MGPIO_vSetPinAltFn(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,ALTF_2);
-						break;
-					case TIM4:
-						/* Enable Timer */
-						MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
-						/* Set ALTF Type */
-						MGPIO_vSetPinAltFn(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,ALTF_2);
-						break;
-					case TIM5:
-						/* Enable Timer */
-						MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
-						/* Set ALTF Type */
-						MGPIO_vSetPinAltFn(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,ALTF_2);
-						break;
-					}
-					/* Set Motor Pins as Output */
-					MGPIO_vSetPinMode(HMOTOR3_A_PORT,HMOTOR3_A_PIN,MODE_OUTPUT);
-					MGPIO_vSetPinMode(HMOTOR3_B_PORT,HMOTOR3_B_PIN,MODE_OUTPUT);
-					break;
+		case HMOTOR2:
+			/* Initialize timer */
+			MTIM_u8TimInit(HMOTOR2_TIMER_Number);
+			/* Set Timer Pin ALTF */
+			MGPIO_vSetPinMode(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,MODE_ALTF);
+			/* Set ALTF Type */
+			MGPIO_vSetPinAltFn(HMOTOR2_EN_PORT,HMOTOR2_EN_PIN,HMOTOR2_TIMER_ALTF);
+			/* Set Motor Pins as Output */
+			MGPIO_vSetPinMode(HMOTOR2_A_PORT,HMOTOR2_A_PIN,MODE_OUTPUT);
+			MGPIO_vSetPinMode(HMOTOR2_B_PORT,HMOTOR2_B_PIN,MODE_OUTPUT);
+			MGPIO_vSetPinOutPutType(HMOTOR2_A_PORT,HMOTOR2_A_PIN,PUSH_PULL);
+			MGPIO_vSetPinOutPutType(HMOTOR2_B_PORT,HMOTOR2_B_PIN,PUSH_PULL);
+			MGPIO_vSetPullType(HMOTOR2_A_PORT,HMOTOR2_A_PIN,PULL_OFF);
+			MGPIO_vSetPullType(HMOTOR2_B_PORT,HMOTOR2_B_PIN,PULL_OFF);
+			break;
+		case HMOTOR3:
+			/* Initialize timer */
+			MTIM_u8TimInit(HMOTOR3_TIMER_Number);
+			/* Set Timer Pin ALTF */
+			MGPIO_vSetPinMode(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,MODE_ALTF);
+			/* Set ALTF Type */
+			MGPIO_vSetPinAltFn(HMOTOR3_EN_PORT,HMOTOR3_EN_PIN,HMOTOR3_TIMER_ALTF);
+			/* Set Motor Pins as Output */
+			MGPIO_vSetPinMode(HMOTOR3_A_PORT,HMOTOR3_A_PIN,MODE_OUTPUT);
+			MGPIO_vSetPinMode(HMOTOR3_B_PORT,HMOTOR3_B_PIN,MODE_OUTPUT);
+			MGPIO_vSetPinOutPutType(HMOTOR3_A_PORT,HMOTOR3_A_PIN,PUSH_PULL);
+			MGPIO_vSetPinOutPutType(HMOTOR3_B_PORT,HMOTOR3_B_PIN,PUSH_PULL);
+			MGPIO_vSetPullType(HMOTOR3_A_PORT,HMOTOR3_A_PIN,PULL_OFF);
+			MGPIO_vSetPullType(HMOTOR3_B_PORT,HMOTOR3_B_PIN,PULL_OFF);
+			break;
 		}
 	}
 	else

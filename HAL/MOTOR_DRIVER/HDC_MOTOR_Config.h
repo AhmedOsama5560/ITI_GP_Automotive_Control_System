@@ -11,9 +11,10 @@
 /*Motor 1 PORT &PINS*/
 #define HMOTOR1_TIMER_Number   TIM2
 #define HMOTOR1_TIMER_Polarity MTIM_HIGH
+#define HMOTOR1_TIMER_ALTF     ALTF_1
 
-#define HMOTOR1_EN_PORT     GPIOA
-#define HMOTOR1_EN_PIN      _GPIO_PIN_0
+#define HMOTOR1_EN_PORT        GPIOA
+#define HMOTOR1_EN_PIN         _GPIO_PIN_0
 
 #define HMOTOR1_A_PORT         GPIOB
 #define HMOTOR1_A_PIN          _GPIO_PIN_0
@@ -24,9 +25,10 @@
 /*Motor 2 PORT &PINS*/
 #define HMOTOR2_TIMER_Number   TIM3
 #define HMOTOR2_TIMER_Polarity MTIM_HIGH
+#define HMOTOR2_TIMER_ALTF     ALTF_2
 
-#define HMOTOR2_EN_PORT     GPIOA
-#define HMOTOR2_EN_PIN      _GPIO_PIN_1
+#define HMOTOR2_EN_PORT        GPIOA
+#define HMOTOR2_EN_PIN         _GPIO_PIN_1
 
 #define HMOTOR2_A_PORT         GPIOB
 #define HMOTOR2_A_PIN          _GPIO_PIN_2
@@ -37,9 +39,10 @@
 /*Motor 3 PORT &PINS*/
 #define HMOTOR3_TIMER_Number   TIM4
 #define HMOTOR3_TIMER_Polarity MTIM_HIGH
+#define HMOTOR3_TIMER_ALTF     ALTF_2
 
-#define HMOTOR3_EN_PORT     GPIOA
-#define HMOTOR3_EN_PIN      _GPIO_PIN_2
+#define HMOTOR3_EN_PORT        GPIOA
+#define HMOTOR3_EN_PIN         _GPIO_PIN_2
 
 #define HMOTOR3_A_PORT         GPIOB
 #define HMOTOR3_A_PIN          _GPIO_PIN_4
